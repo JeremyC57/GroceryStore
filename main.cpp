@@ -7,6 +7,7 @@ int main()
 {
   string list[5]; //array of 5 strings
   int numItems = 0;
+  string item;
   char input;
   do
   {
@@ -19,14 +20,17 @@ int main()
           cin>>input;
           if(tolower(input) == 'a')
           {
-                  if(numItems <5)                                                                                         {   
-                       cout << "\nWhat is the item?" << endl;
-                       cin >> list[numItems];
+                  cout << "What is the item?\n";
+                  cin >> item;
+                  cin.clear();
+                  cin.ignore();
+                  if(numItems <5)                                                                                 {                                           
+                        list[numItems] = item;
                        numItems++;
                   }
                   else
                   {
-                          cout << "\nYou'll need a bigger list!";
+                          cout << "You'll need a bigger list!" << endl;
                   }
           }
   }while(tolower(input) != 'q');
