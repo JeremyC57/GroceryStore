@@ -3,9 +3,10 @@
 #include<string>
 using namespace std;
 
+const int LIST_SIZE = 5;
 int main()
 {
-  string list[5]; //array of 5 strings
+  string list[LIST_SIZE]; //array of strings 
   int numItems = 0;
   string item;
   char input;
@@ -34,5 +35,12 @@ int main()
                   }
           }
   }while(tolower(input) != 'q');
+
+  cout << "==ITEMS TO BUY==" << endl;
+
+  for(int index =0 ; index<LIST_SIZE ;index++)
+  {
+          cout  << index + 1 << " " << list[index] << endl;
+  }
   return 0;
 }
